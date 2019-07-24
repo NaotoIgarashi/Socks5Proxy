@@ -1,0 +1,7 @@
+{
+	"url": "http://inet-ip.info/ip",
+	"proxyPorts": [
+        "10001",
+        "10002"
+    ]
+}
