@@ -20,7 +20,7 @@ sudo systemctl restart sshd
 
 ## Proxy Client setting
 
-ssh to each ssh server as Sock5 Proxy
+ssh to each ssh server as Socks5 Proxy
 
 ```sh
 ssh <username>@<proxy server ip or url> -N -f -D <portnumber>
@@ -37,7 +37,10 @@ Set the proxy port in config.json
 ```json
 {
 	"url": "http://inet-ip.info/ip",
-	"proxyPort": "10001"
+	"proxyPorts": [
+        "10001",
+        "10002"
+    ]
 }
 ```
 
@@ -50,5 +53,5 @@ go run main.go
 # Notes
 When execute from shell
 ```sh
-curl --proxy socks5://localhost:8080 http://inet-ip.info/ip
+curl --proxy socks5://localhost:10001 http://inet-ip.info/ip
 ```
